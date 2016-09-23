@@ -11,6 +11,11 @@ function controller($window, companyService, contactService, positionService, ac
   this.styles = styles;
   this.userId = $window.localStorage['id'];
 
+  // I think it would make more sense for these to be
+  // dispatched individually, that way the UI could be populated
+  // as each part returns.
+  // With this approach, you're waiting until all data is
+  // retrieved before showing the user anything
   Promise.all([
     actionItemService.getDueAndOverdue(this.userId),
     companyService.getByUser(this.userId),
@@ -47,11 +52,17 @@ function controller($window, companyService, contactService, positionService, ac
     actionItemService.remove(id)
     .then(removed => {
       if (category === 'due') {
-        this.almostDue.forEach((e,i) => {
-          if (id === e._id) {
-            this.almostDue.splice(i, 1);
-          }
-        });
+        
+        const index = this.almostDue.findIndex(e => id === e._id);
+        this.almostDue.splice(index, 1);
+        
+        // this will continue to loop through the whole list
+        // even after a match as been made
+        // this.almostDue.forEach((e,i) => {
+        //   if (id === e._id) {
+        //     this.almostDue.splice(i, 1);
+        //   }
+        // });
       } else {
         this.overDue.forEach((e,i) => {
           if (id === e._id) {

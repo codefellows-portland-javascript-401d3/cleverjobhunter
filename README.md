@@ -31,6 +31,8 @@ Clever Job Hunter is a central location where you can keep information about pos
   - `npm install` and `npm start`
   - Navigate to `localhost:8080` in a web browser
 
+What about setting instructions for `.env`?
+
 ### Misc Info
 - Server runs on `localhost:3000` by default
 - Frontend runs on `localhost:8080` by default

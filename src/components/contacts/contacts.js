@@ -73,6 +73,7 @@ function controller (contactService, $window, companyService, $mdDialog) {
       .catch(err => console.log(err));
   };
 
+  // this function should be in it's own module
   this.exportToCSV = function() {
 
     const headerList = [
@@ -123,6 +124,8 @@ function controller (contactService, $window, companyService, $mdDialog) {
       document.body.appendChild(link);
 
       link.click();
+
+      // should link be removed afterwards?
     }
   };
 

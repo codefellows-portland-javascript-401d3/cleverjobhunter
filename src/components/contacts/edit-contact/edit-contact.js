@@ -33,4 +33,5 @@ function controller($mdDialog, contactService, companyService, $window) {
   };
 
 }
+// WAT?
 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3ZDU3YzJiOWI4MDZiMzg2Zjc3ZGFhNSIsImlhdCI6MTQ3MzcxOTc2MX0.jqCwOANAJhTK0Fsh2Zn42B4z6fyvXv1fKXCZK8IlBio

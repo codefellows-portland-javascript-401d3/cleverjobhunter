@@ -27,6 +27,10 @@ function controller(companyService, contactService, positionService, $window, us
   })
   .catch(err => console.log(err));
 
+  // hungarian notion with type prefix, ege `numPositions`, `objTracked` is something
+  // I did back in VB6, but not at all common in javascript. Stick with `positions`, `tracked`, etc.
+
+  // nice abstraction into a common function used by each viz!
   this.renderViz = (element, objTracked, objVerb, completed, goal) => {
     // this hides the legend on each chart
     Chart.defaults.global.legend.display = false;

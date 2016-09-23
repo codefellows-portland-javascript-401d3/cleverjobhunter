@@ -1,3 +1,8 @@
+/* many of the component .scss files only contain these css props,
+better to define a class in main.scss and then skip the component
+.scss file all together. Which (for this file at least) means an
+even simpler js file */
+
 :local(.landing) {
   width: 80%;
   margin: 0 auto;

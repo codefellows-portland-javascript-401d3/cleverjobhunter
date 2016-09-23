@@ -52,7 +52,7 @@ function controller(userService, $state, $mdDialog, $window) {
     });
   };
 
-  var originatorEv; // necessary? no idea.
+  var originatorEv; // necessary? no idea. look at how is it used...
   this.openMenu = function($mdOpenMenu, ev) {
     originatorEv = ev;
     $mdOpenMenu(ev);
